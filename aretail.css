@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#about-div, #products-div, #basket-div, #thank-you-div{
+    display: none;
+}
+
+#about-div.active, #products-div.active, #basket-div.active, #thank-you-div.active {
+    display: block;
+}
+
+#menu {
+    margin: 20px 0;
+    border: 1px dashed #AAAAAA;
+}
+
+#product-list, #basket-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#product-list li, #basket-list li {
+    margin: 5px 0;
+}
+
+#checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#checkout-button:hover {
+    background-color: #45a049;
+}
+
+.menuitem {
+    cursor: pointer;
+    margin: 0 10px;
+    color: blue;
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menuitem:hover {
+    background-color: #ccffcf;
+
+}
+
+.counter-cls {
+    background-color: #2600ff;
+    color: rgb(199, 205, 255);
+    padding: 2px 5px;
+    margin-left: 10px;
+    border-radius: 15px;
+}
