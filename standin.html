@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvar Retail standin</title>
+    <script src="retail.js"></script>
+    <script src="site.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #about-div, #products-div, #basket-div, #thank-you-div{
+            display: none;
+        }
+
+        #about-div.active, #products-div.active, #basket-div.active, #thank-you-div.active {
+            display: block;
+        }
+        
+        #menu {
+            margin: 20px 0;
+            border: 1px dashed #AAAAAA;
+        }
+  
+        #product-list, #basket-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #product-list li, #basket-list li {
+            margin: 5px 0;
+        }
+
+        #checkout-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #checkout-button:hover {
+            background-color: #45a049;
+        }
+
+        .menuitem {
+            cursor: pointer;
+            margin: 0 10px;
+            color: blue;
+            border: 1px solid blue;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menuitem:hover {
+            background-color: #ccffcf;
+
+        }
+
+        .counter-cls {
+            background-color: #2600ff;
+            color: rgb(199, 205, 255);
+            padding: 2px 5px;
+            margin-left: 10px;
+            border-radius: 15px;
+        }
+
+        </style
+</head>
+<body>
+    <header>A retail</header>
+    <main>
+        <div id="menu>
+            <span class="menuitem"/>
+            <span class="menuitem" onclick="javascript:showDiv('about-div')">About us</span>
+
+            <span class="menuitem" onclick="javascript:showDiv('products-div')">Products</span>
+            
+            <span class="menuitem" onclick="javascript:showDiv('basket-div')">Basket <span class = 'counter-cls' id="basket-count"></span>
+        </div>
+    
+    <div id="about-div">    
+        <h2>About Us</h2>
+        <p>Welcome to Alvar Retail! We are dedicated to providing the best shopping experience.</p>
+        <p>Our mission is to offer high-quality products at competitive prices.</p>
+        <p>Contact us at:
+    </div>
+    
+
+    <div id="products-div">    
+        <h2>Products</h2>
+        <ul id="product-list"></ul>
+    </div>
+
+    <div id="basket-div">
+        <h2>Shopping Basket</h2>
+        <ul id="basket-list"></ul>
+        <span id="total-price">0.00</span>
+        <button id="checkout-button" onclick="javascript:processBasket()">Checkout</button>
+    </div>
+
+    <div id="thank-you-div">
+        <h2>Thank You!</h2>
+        <p>Your order has been placed successfully.</p>
+        <p>We appreciate your business!</p>
+        <p>Order ID: <span id="order-id"></span></p>
+        <p>Order Total: <span id="order-total"></span></p>
+        <p>Order Date: <span id="order-date"></span></p>
+        <p>Order Status: <span id="order-status"></span></p>
+        <p>Order Items: <span id="order-items"></span></p>
+    </div>        
+    </main>
+
+    <footer>
+        <p>Contact text</p>
+    </footer>
+</body>
+<script>
+    populateProductList();
+</script>
+</html>
