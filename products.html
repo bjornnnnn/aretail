@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvar Retail standin</title>
+    <script src="retail.js"></script>
+    <link rel="stylesheet" href="aretail.css"></link>
+</head>
+<body>
+    <header>A retail</header>
+    <main>
+        <div id="menu">
+            <span class="menuitem" onclick="location.href='about.html'">About us</span>
+            <span class="menuitem" onclick="location.href='products.html'">Products</span>
+            <span class="menuitem" onclick="location.href='basket.html'">Basket <span class = 'counter-cls' id="basket-count"></span></span>    
+        </div>
+    
+    
+    
+
+    <div id="products-div" >    
+        <h2>Products</h2>
+        <!-- Copy this element, It is used to hold the articles populated from javascript -->
+        <ul id="product-list"></ul>
+    </div>
+
+    
+    </main>
+
+    <footer>
+        <p>Contact text</p>
+    </footer>
+    <script>
+        let shoppingBasketObj = getShoppingBasketFromSessionStorage();
+        if (shoppingBasketObj == null) {
+            shoppingBasketObj = shoppingBasket; // Initialize shoppingBasket if not found in session storage
+        }
+        populateProductList(shoppingBasketObj);
+        shoppingBasketFn.toSessionStorage(shoppingBasketObj);
+        updateBasketCounter(shoppingBasketObj);
+    </script>
+
+</body > 
+</html>

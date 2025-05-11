@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvar Retail standin</title>
+    <script src="retail.js"></script>
+    <link rel="stylesheet" href="aretail.css"></link>
+</head>
+<body>
+    <header>A retail</header>
+    <main>
+        <div id="menu">
+            <span class="menuitem" onclick="location.href='about.html'">About us</span>
+            <span class="menuitem" onclick="location.href='products.html'">Products</span>
+            <span class="menuitem" onclick="location.href='basket.html'">Basket <span class = 'counter-cls' id="basket-count"></span>
+        </div>
+
+    <div id="basket-div">
+        <h2>Shopping Basket</h2>
+        <ul id="basket-list"></ul>
+        <span id="total-price">0.00</span>
+        <button id="checkout-button" onclick="location.href='checkout.html';">Checkout</button>
+    </div>
+   
+    </main>
+
+    <footer>
+        <p>Contact text</p>
+    </footer>
+</body>
+<script>
+    shoppingBasketData = sessionStorage.getItem("shoppingBasket");
+    if (shoppingBasketData == null) {
+        console.error("No shopping basket found in session storage");
+    } else {
+        shoppingBasket = JSON.parse(shoppingBasketData);
+        updateBasketCounter(shoppingBasket);
+        updateBasketList(shoppingBasket);
+    }
+</script>
+</html>

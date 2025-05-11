@@ -22,18 +22,10 @@ footer {
     width: 100%;
 }
 
-#about-div, #products-div, #basket-div, #thank-you-div{
-    display: none;
-}
-
 #about-div.active, #products-div.active, #basket-div.active, #thank-you-div.active {
     display: block;
 }
 
-#menu {
-    margin: 20px 0;
-    border: 1px dashed #AAAAAA;
-}
 
 #product-list, #basket-list {
     list-style-type: none;
